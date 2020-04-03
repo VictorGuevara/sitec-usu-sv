@@ -1,0 +1,709 @@
+/* FUENTES PARA EL SITIO */
+@import url('https://fonts.googleapis.com/css?family=Do+Hyeon|Open+Sans&display=swap');
+
+:root {
+    --claro: rgba(255, 255, 255, 1);
+    --oscuro: rgba(0, 0, 0, 1);
+    --gris: rgba(100, 100, 100, 1);
+    --gris_medio: rgba(150, 150, 150, 1);
+    --gris_claro: rgba(240, 240, 240, 1);
+    --celeste: rgba(67, 197, 221, 1);
+    --aqua_verde: rgba(2, 206, 189, 1);
+    --magenta: rgba(171, 74, 157, 1);
+}
+
+/* ESTILOS GLOBALES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+html { scroll-behavior: smooth }
+
+/* ESTILOS DEL HEADER */
+.banner header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.banner header .logo {
+    color: var(--claro);
+    text-decoration: none;
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.banner header .toggle {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    color: var(--claro);
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* ESTILOS DE LA PANTALLA DE INICIO O BANNER */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: var(--aqua_verde);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.25;
+}
+
+.banner .contenido {
+    position: relative;
+    max-width: 750px;
+    text-align: center;
+}
+
+.banner .contenido h2 {
+    color: var(--claro);
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 60px;
+    letter-spacing: 1px;
+}
+
+.banner .contenido p {
+    color: var(--claro);
+    font-size: 18px;
+}
+
+/* ESTILOS DEL MENU */
+.navigation-wrapper {
+    position: relative;
+}
+.navigation-button {
+    will-change: transform;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: fixed;
+    z-index: 1;
+    top: 40px;
+    right: 100px;
+    background: var(--aqua_verde);
+    cursor: pointer;
+}
+.navigation-button .fa {
+    border: 2px solid white;
+    border-radius: 3px;
+    padding: 10px;
+    color: var(--claro);
+}
+ 
+
+.navigation-menu ul li {
+    list-style: none;
+    font-weight: 300;
+    color: var(--gris);
+}
+
+.navigation-menu {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    background: #fff;
+    height: 100%;
+    transform: skewX(0deg) translate(100%,0);
+    transform-origin: top right;
+    transition: all .2s ease-in;
+    z-index: -1;
+}
+.navigation-menu ul {
+    transform: skewX(-8deg);
+    transform-origin: top left;
+    position: fixed;
+    right: 120px;
+    top: 120px;
+    width: 400px;
+    text-align: right;
+
+}
+.navigation-menu ul li {
+    position: relative;
+    z-index: 999;
+    font-size: 32px;
+    color: var(--oscuro);
+    line-height: 64px;
+}
+.navigation-menu ul li a {
+    border: none;
+    color: var(--oscuro);
+    font-family: 'Do Hyeon', sans-serif;
+    text-decoration: none;
+    transition: 0.4s;
+}
+
+.navigation-menu ul li a:hover {
+    color: var(--aqua_verde);
+    transition: 0.4s;
+}
+
+.navigation-menu.active {
+    transform: skewX(8deg) translate(0,0);
+}
+
+.navigation-menu li {
+    opacity: 0;
+    transform: translate(0, 10px);
+    transition: all .0s ease-in .3s;
+  
+}
+.navigation-menu.active li {
+    opacity: 1;
+    transform: translate(0,0);
+    transition: all .2s ease-in 0s;
+}
+.navigation-menu.active li:nth-child(1) {
+    transition-delay: .3s;
+}
+.navigation-menu.active li:nth-child(2) {
+    transition-delay: .4s;
+}
+.navigation-menu.active li:nth-child(3) {
+    transition-delay: .5s;
+}
+.navigation-menu.active li:nth-child(4) {
+    transition-delay: .6s;
+}
+.navigation-menu.active li:nth-child(5) {
+    transition-delay: .7s;
+}
+.navigation-menu.active li:nth-child(6) {
+    transition-delay: .8s;
+}
+
+/* ESTILOS PARA LA SECCION DE NOSOTROS */
+.nosotros {
+    position: relative;
+    width: 100%;
+    display: flex;
+}
+
+.nosotros .caja_contenido {
+    background: var(--gris_claro);
+    padding: 100px;
+    width: 50%;
+}
+
+.heading {
+    color: var(--oscuro);
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 30px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.parrafo {
+    color: var(--gris);
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.caja_img {
+    background: url(../imagnes/logo.svg);
+    width: 50%;
+    background-size: cover;
+    background-position: center;
+}
+
+/* ESTILOS DE LA SECCION DE SERVICIOS */
+.heading_claro {
+    color: var(--claro);
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 30px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.parrafo_claro {
+    color: var(--claro);
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.servicios {
+    background: var(--celeste);
+    padding: 100px;
+    text-align: center;
+}
+
+.servicios .contenido {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+
+.servicios .contenido .caja_servicios {
+    position: relative;
+    background: var(--claro);
+    width: 350px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.servicios .contenido .caja_servicios i {
+    font-size: 100px;
+    margin-bottom: 40px;
+    color: var(--aqua_verde);
+}
+
+.servicios .contenido .caja_servicios h2 {
+    color: var(--gris);
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 30px;
+}
+
+/* ESTILOS DE LA SECCION DE TECNOLOGIA */
+.tecnologia {
+    background: var(--gris_claro);
+    width: 100%;
+    padding: 100px;
+    padding-top: 350px;
+    margin-top: -350px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.tecnologia .caja_contenido {
+    max-width: 800px;
+}
+
+.tecnologia .caja_imagen {
+    max-width: 250px
+}
+
+.tecnologia .caja_imagen img {
+    max-width: 100%;
+}
+
+/* ESTILOS PARA LA SECCION DE CLIENTES */
+.teln {
+    background: var(--magenta);
+    padding: 100px;
+    text-align: center;
+}
+
+.teln .caja_teln {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.teln .caja_teln img {
+    max-width: 200px;
+    margin: 20px;
+    opacity: 0.25;
+    cursor: pointer;
+}
+
+.teln .caja_teln img:hover {
+    opacity: 1;
+}
+
+/* ESTILOS PARA LA SECCION DE DESCRIPCION DE SERVICIOS */
+.cnservices {
+    position: relative;
+    padding: 100px;
+    background: var(--gris_claro);
+    text-align: center;
+}
+
+.cnservices .contenido_cnservices {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.cnservices .contenido_cnservices .caja_contenido {
+    background: var(--claro);
+    padding: 60px 50px;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    margin-bottom: 40px;
+}
+
+.cnservices .contenido_cnservices .caja_contenido p {
+    font-size: 18px
+}
+
+.cnservices .contenido_cnservices .caja_contenido h3 {
+    width: 100%;
+    text-align: end;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--celeste);
+}
+
+/* ESTILOS DE LA SECCION DE CONTACTO */
+.contacto {
+    padding: 100px;
+    background: var(--celeste);
+    text-align: center;
+}
+
+.form .input_caja {
+    margin-bottom: 40px;
+}
+
+.form .input_caja input {
+    width: 100%;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    padding: 10px 0;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--oscuro);
+    border-bottom: 1px solid var(--gris);
+}
+
+.form .input_caja input::placeholder {
+    color: var(--gris_medio);
+}
+
+.form .input_caja textarea {
+    width: 100%;
+    min-height: 150px;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    padding: 10px 0;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--oscuro);
+    border-bottom: 1px solid var(--gris);
+}
+
+.form .input_caja textarea::placeholder {
+    color: var(--gris_medio);
+}
+
+.form .input_caja input[type="submit"] {
+    width: 100%;
+    background: var(--celeste);
+    color: var(--claro);
+    border: none;
+    font-family: 'Do Hyeon', sans-serif;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+}
+
+.form .input_caja input[type="submit"]:hover {
+    font-style: italic;
+}
+
+.mapa_direccion {
+    width: 50%;
+}
+
+.mapa_direccion iframe {
+    padding: 10px;
+    border: 0;
+    height: 100%;
+    left: 0;
+    position: relative;
+    top: 0;
+    width: 100%;
+}
+
+/* ESTILOS PARA EL PIE DE PAGINA */
+.footer {
+    background: var(--oscuro);
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer ul li {
+    list-style: none;
+}
+
+.footer ul li a {
+    text-decoration: none;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.footer ul li a i {
+    font-size: 20px;
+    color: var(--aqua_verde);
+    transition: 0.4s;
+}
+
+.footer ul li a:hover i {
+    color: var(--claro);
+    transition: 0.4s;
+}
+
+.parrafo_footer {
+    color: var(--claro);
+    font-family: 'Do Hyeon', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+/* MEDIA QUERIS PARA EL RESPONSIVE */
+@media (max-width: 1366px) {
+    .servicios .contenido .caja_servicios {
+        margin: 20px;
+        width: 350px;
+        height: 400px;
+    }
+}
+
+@media (max-width: 991px) {
+    /* BANNERS */
+    .banner {
+        padding: 50px;
+    }
+    
+    .banner header {
+        padding: 20px 50px;
+    }
+    
+    .banner .contenido h2 {
+        font-size: 36px;
+    }
+    
+    .banner .contenido p {
+        font-size: 16px;        
+    }
+    
+    /* MENU */
+    .navigation-menu.active {
+        transform: skewX(8deg) translate(0,0);
+        width: 70%;
+    }
+    
+    .navigation-menu.active ul {
+        right: 50px;
+    }
+    
+    .navigation-menu.active ul li a {
+        font-size: 25px
+    }
+    
+    .navigation-button {
+        top: 25px;
+        right: 50px;
+    }
+    
+    /* NOSOTROS */
+    .nosotros {
+        flex-direction: column;
+    }
+    
+    .nosotros .caja_contenido {
+        width: 100%;
+        padding: 50px;
+        min-height: 400px;
+        text-align: center;
+    }
+
+    .nosotros .caja_img {
+        width: 100%;
+        padding: 50px;
+        min-height: 400px;
+        text-align: center;
+    }
+    
+    /* SERVICIOS */
+    .servicios {
+        padding: 50px;
+    }
+    
+    .servicios .contenido {
+        justify-content: center;
+        margin-top: 20px;
+    }
+    
+    .servicios .contenido .caja_servicios {
+        margin: 20px;
+        width: 300px;
+        height: 350px;
+    }
+    
+    /* TECNOLOGIA */
+    .tecnologia {
+        padding: 50px;
+        padding-top: 350px;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .tecnologia .caja_imagen {
+        margin-top: 40px;
+        max-width: 250px;
+    }
+    
+    /* TECNOLOGIAS EN LA NUBE */
+    .teln {
+        padding: 50px;
+    }
+    
+    .teln .caja_teln {
+        justify-content: center;
+    }
+    
+    /* DESCRIPCION */
+    .cnservices {
+        padding: 50px;
+    }
+    
+    .cnservices .caja_contenido {
+        padding: 60px 40px;
+        min-width: 100%;
+        margin-bottom: 40px;
+    }
+    
+    .cnservices .caja_contenido:last-child {
+        margin-bottom: 0;
+    }
+    
+    /* CONTACTO */
+    .contacto {
+        padding: 50px;
+    }
+    
+    .mapa_direccion {
+        width: 100%;
+        height: 550px;
+    }
+    
+    /* PIE DE PAGINA */
+    .footer {
+        padding: 20px 50px;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    
+    .footer ul {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* SERVICIOS */
+    .servicios .contenido .caja_servicios h2 {
+        font-size: 20px;
+    }
+    
+    /* DESCRIPCION */
+    .heading, .heading_claro {
+        font-size: 25px;
+    }
+    
+    .cnservices .contenido_cnservices .caja_contenido {
+        padding: 40px 30px;
+        height: auto;
+    }
+    
+    .cnservices .contenido_cnservices .caja_contenido h3 {
+        font-size: 14px;
+    }
+    
+    .cnservices .contenido_cnservices .caja_contenido p {
+        font-size: 12px;
+        text-align: justify;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
